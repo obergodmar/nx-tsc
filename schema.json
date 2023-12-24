@@ -5,7 +5,7 @@
   "properties": {
     "tsConfig": {
       "type": "array",
-      "description": "TypeScript config(s)"
+      "description": "TypeScript config file(s) e.g. tsconfig.app.json or just tsconfig.json"
     }
   }
 }

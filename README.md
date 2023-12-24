@@ -1,24 +1,24 @@
 # nx-tsc
 
-Nx executor to type-check project source files using tsc --noEmit
+Nx executor to check types of project source files using `tsc --noEmit`
 
 ## Installation
 
 ```bash
-npm install -D @webpro/nx-tsc
+npm install -D @obergodmar/nx-tsc
 ```
 
 ## Configuration
 
-Add a `tsc` target to each `project.json`:
+Add a `types-check` target to each `project.json`:
 
 ```json
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/my-lib/src",
   "targets": {
-    "tsc": {
-      "executor": "@webpro/nx-tsc:tsc",
+    "types-check": {
+      "executor": "@obergodmar/nx-tsc:types-check",
       "options": {
         "tsConfig": ["tsconfig.json"]
       }
@@ -27,10 +27,26 @@ Add a `tsc` target to each `project.json`:
 }
 ```
 
-## Run type-checker
+## Run types-check
 
 This enables the `tsc` target in the Nx workspace:
 
 ```bash
-nx tsc my-lib
+nx types-check my-lib
+```
+
+## Run types-check for every single app/lib
+
+Add a `types-check` script to global `package.json`:
+
+```json
+{
+  "scripts": {
+    "types-check": "nx run-many --target=types-check --all=true --verbose"
+  }
+}
+```
+
+```bash
+npm run types-check
 ```
