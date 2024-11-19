@@ -1,6 +1,6 @@
 {
   "name": "@obergodmar/nx-tsc",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Nx executor to type-check project source files using tsc --noEmit",
   "main": "./index.js",
   "executors": "./executor.json",
